@@ -3,7 +3,7 @@ import { colors } from '../../styles/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        color: "#142A4A"
+        backgroundColor: colors.secondary
 
     },
     panel: {
@@ -17,5 +17,5 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'space-around',
         marginBottom: 20
-    }
+    },
 });

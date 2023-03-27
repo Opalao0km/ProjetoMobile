@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     buttonSlider: {
         flexDirection: "row",
         justifyContent: 'space-around',
-        marginBottom: 20
+        marginBottom: 20,
+
     }
 });
