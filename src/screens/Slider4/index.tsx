@@ -4,6 +4,8 @@ import {
     ComponentButtonSlider, ComponentListMarker, ComponentTitleSlider
 } from '../../components';
 import { styles } from './styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Text } from 'react-native'
 export function Slider4({ setPageI }: IPage) {
     const slide1Texts = [
         { id: '1', text: 'GPS com zonas de perigo evidenciadas por marcadores nas cores verde(seguro), amarelo(pouco perigoso) e vermelho(perigoso).'},
@@ -20,12 +22,19 @@ export function Slider4({ setPageI }: IPage) {
                     }
                     keyExtractor={(item) => item.id}
                 />
+                <TouchableOpacity style={styles.buttonEntrar} onPress={
+                    () => setPageI(5)
+                }>
+                    <Text style={styles.buttonEntrarText}> Entrar </Text>
+                </TouchableOpacity>
+
             </View>
             <View style={styles.buttonSlider}>
                 <ComponentButtonSlider onPressI={() => setPageI(1)} cor={false}/>
                 <ComponentButtonSlider onPressI={() => setPageI(2)} cor={false}/>
                 <ComponentButtonSlider onPressI={() => setPageI(3)} cor={false}/>
                 <ComponentButtonSlider onPressI={() => setPageI(4)} cor={true}/>
+                <ComponentButtonSlider onPressI={() => setPageI(5)} cor={true}/>
             </View>
         </View>
     );
