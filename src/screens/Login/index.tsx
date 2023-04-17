@@ -5,9 +5,10 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons'; 
 import { colors } from '../../styles/colors';
 import {ComponentButtonInterface} from "../../components"
+import { LoginTypes } from '../../navigations/login.navigation';
 
 
-export function Login() {
+export function Login({navigation}: LoginTypes) {
     return (
         <View style={styles.container}>
             <KeyboardAvoidingView>
@@ -32,8 +33,8 @@ export function Login() {
                     style={styles.input}
                 />
             </View>
-            <ComponentButtonInterface title='Entrar' type='primary' onPressI={()=>{console.log("Login")}} />
-            <ComponentButtonInterface title='Cadastrar' type='primary' onPressI={()=>{console.log("Cadastrar")}} />
+            <ComponentButtonInterface title='Cadastrar' type='secondary' onPressI={()=> navigation.navigate ('Cadastrar')} />
+            <ComponentButtonInterface title='Entrar' type='primary' onPressI={()=>{console.log('Entrar')}} />
             </KeyboardAvoidingView>
             
         </View>
