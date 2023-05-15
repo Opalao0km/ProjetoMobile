@@ -1,10 +1,11 @@
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign, Ionicons, FontAwesome } from '@expo/vector-icons';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { ScreenPerfil } from "../screens"
+import { ScreenPerfil, ScreenCamera } from "../screens"
 import { colors } from '../styles/colors';
 type TabParamList = {
   Perfil: undefined
+  Camera: undefined
 };
 type TabScreenNavigationProp = BottomTabNavigationProp <TabParamList, "Perfil">
 export type TabTypes = {
@@ -31,6 +32,13 @@ export function TabNavigation() {
             <Ionicons name='person' color={colors.white} size={24} />
           )
         }}      
+      />
+      <Tab.Screen name='Camera' component={ScreenCamera}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome name='camera' size={24} color={colors.white} />
+          )
+        }}
       />
     </Tab.Navigator>
   );
