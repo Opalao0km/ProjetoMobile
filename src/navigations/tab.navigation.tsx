@@ -1,11 +1,12 @@
-import { AntDesign, Ionicons, FontAwesome } from '@expo/vector-icons';
+import { AntDesign, Ionicons, FontAwesome, Entypo } from '@expo/vector-icons';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { ScreenPerfil, ScreenCamera } from "../screens"
+import { ScreenPerfil, ScreenCamera, ScreenLocation } from "../screens"
 import { colors } from '../styles/colors';
 type TabParamList = {
   Perfil: undefined
   Camera: undefined
+  Location: undefined
 };
 type TabScreenNavigationProp = BottomTabNavigationProp <TabParamList, "Perfil">
 export type TabTypes = {
@@ -37,6 +38,13 @@ export function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <FontAwesome name='camera' size={24} color={colors.white} />
+          )
+        }}
+      />
+      <Tab.Screen name='Location' component={ScreenLocation}
+        options={{
+          tabBarIcon: () => (
+            <Entypo name='location' color={colors.white} size={24}/>
           )
         }}
       />
